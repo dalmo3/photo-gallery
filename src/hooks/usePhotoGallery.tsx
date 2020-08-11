@@ -10,13 +10,12 @@ import {
   Capacitor,
   FilesystemDirectory,
 } from '@capacitor/core';
-import { save } from 'ionicons/icons';
 
 const PHOTO_STORAGE = 'photos';
 
 export function usePhotoGallery() {
   const { getPhoto } = useCamera();
-  const { deleteFile, getUri, readFile, writeFile } = useFilesystem();
+  const { deleteFile, readFile, writeFile } = useFilesystem();
   const { get, set } = useStorage();
 
   const [photos, setPhotos] = useState<Photo[]>([]);

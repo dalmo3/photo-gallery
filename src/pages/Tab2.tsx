@@ -13,9 +13,8 @@ import {
   IonCol,
   IonImg,
 } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Tab2.css';
-import { camera, phoneLandscape } from 'ionicons/icons';
+import { camera } from 'ionicons/icons';
 import { usePhotoGallery } from '../hooks/usePhotoGallery';
 
 const Tab2: React.FC = () => {
@@ -32,7 +31,6 @@ const Tab2: React.FC = () => {
         <IonGrid>
           <IonRow>
             {photos.map((photo, i) => (
-                console.log(photo),
               <IonCol size="6" key={photo.filepath  }>
                 <IonImg src={photo.base64 ?? photo.webviewPath} />
               </IonCol>
@@ -50,5 +48,3 @@ const Tab2: React.FC = () => {
 };
 
 export default Tab2;
-
-const takePhoto = () => {};
